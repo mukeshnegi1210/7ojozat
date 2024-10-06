@@ -1,0 +1,133 @@
+header .main-menu li a {
+  font-weight: 500;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #1F1E0B ;
+}
+
+header .btn-book{
+  padding: 10px 15px;
+  margin-left: 25px;
+}
+
+.services-section .service-box {
+  border-radius: 15px;
+}
+
+.services-section .service-box .img-box {
+  max-height: 240px;
+  margin-bottom: 25px;
+}
+
+.services-section .service-box .img-box img {
+  max-height: 240px;
+}
+
+.clients-testimonials .testimonial {
+  padding: 75px 15px;
+  border-radius: 25px;
+}
+
+.clients-testimonials .testimonial .img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+
+}
+
+.clients-testimonials .testimonial .img img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+
+
+.clients-testimonials .testimonial:hover {
+  padding: 85px 15px;
+  background-color: #4859f7 !important;
+  color: #ffffff;
+}
+
+.clients-testimonials .testimonial:hover .rating {
+  color: #ffffff !important;
+}
+
+.clients-testimonials .testimonial:hover h4 {
+  color: #ffffff !important;
+}
+
+.clients-testimonials .testimonial:hover .img {
+  transform: scale(1.1);
+}
+
+.contact-us-section .contact-information .contact-box .icon {
+  flex: 0 0 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.contact-us-section .contact-information .contact-box .icon h4 {
+  margin-bottom: 0px;
+}
+
+.contact-us-section .contact-information .contact-box+.contact-box {
+  margin-top: 25px;
+}
+
+.contact-us-section .contact-information .contact-box h5 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.contact-us-section .contact-information .contact-box .icon.phone-icon {
+  background: linear-gradient(to bottom, #eaf6ff, #c2e4ff);
+  color: #2391ff;
+
+}
+
+.contact-us-section .contact-information .contact-box .icon.mail-icon {
+  background: linear-gradient(to bottom, #ffc3fa, #d383f8);
+  color: #b02cee;
+}
+
+.contact-us-section .contact-information .contact-box .icon.location-icon {
+  background: linear-gradient(to bottom, #ffeaed, #fe7589);
+  color: #fb385f;
+}
+
+.contact-us-section .social-media-links li a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #4859f7;
+  background: linear-gradient(to bottom, #eaf6ff, #c2e4ff);
+  color: #4859f7;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.contact-us-section .social-media-links li a:hover {
+  background: #4859f7;
+  color: #ffffff;
+  transform: translatey(-5px);
+}
+
+.contact-us-section .social-media-links li+li {
+  margin-left: 10px;
+}
+
+/* .clients-testimonials .testimonial
+
+.clients-testimonials .testimonial
+
+.clients-testimonials .testimonial
+
+.clients-testimonials .testimonial */

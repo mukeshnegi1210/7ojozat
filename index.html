@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Step 1</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script>
+
+    window.onload = function () {
+      const savedType = localStorage.getItem('bookingType');
+      if (savedType) {
+        document.querySelector(`input[name="bookingType"][value="${savedType}"]`).checked = true;
+      }
+    }
+
+    function saveAndNext() {
+      const bookingType = document.querySelector('input[name="bookingType"]:checked');
+
+      if (!bookingType) {
+        alert("Please select a booking type.");
+        return;
+      }
+
+      localStorage.setItem("bookingType", bookingType.value);
+      window.location.href = "step2.html#booking";
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- header section starts here  -->
+  <header>
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="logo">
+          <img src="./images/logo.png" alt="7ojozat">
+        </div>
+        <ul class="d-flex ms-auto mb-0 main-menu">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us </a></li>
+        </ul>
+        <a href="#booking" class="btn btn-primary btn-book">Book Now</a>
+      </div>
+    </div>
+  </header>
+  <!-- header section ends here  -->
+
+  <!-- banner section starts here  -->
+  <section class="banner">
+    <div class="container">
+      <div id="carouselBannerIndicators" class="carousel  slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselBannerIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselBannerIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="banner-content">
+                  <h1 class="text-primary mb-3">Make Every Birthday Unforgettable!</h1>
+                  <h4 class="font-weight-normal mb-4">Expert Planning, Unique Themes, and Memorable Experiences for All
+                    Ages.
+                  </h4>
+                  <button class="btn btn-primary">Book Now</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <img src="./images/banner-img.svg" alt="banner-img">
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="banner-content">
+                  <h1 class="text-primary mb-3">Make Every Birthday Unforgettable!</h1>
+                  <h4 class="font-weight-normal mb-4">Expert Planning, Unique Themes, and Memorable Experiences for All
+                    Ages.
+                  </h4>
+                  <button class="btn btn-primary">Book Now</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <img src="./images/banner-img.svg" alt="banner-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- banner section ends here  -->
+
+
+  <!-- services section starts here  -->
+  <section class="about-us-section bg-light py-5" id="about">
+    <div class="container">
+
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="./images/about-us.svg" alt="about-us">
+        </div>
+        <div class="col-md-6">
+          <h2 class="title left">Let us introduce us </h2>
+          <p>
+            Welcome to 7ojozat, your trusted partner in creating unforgettable moments! We specialize in organizing and
+            managing a wide
+            range of events, from joyful birthday celebrations to romantic engagement ceremonies and elegant weddings.
+            With a passion for perfection and attention to detail, our team brings your vision to life, ensuring that
+            every event we handle is a seamless and memorable experience.
+          </p>
+          <p>Whether you're planning an intimate gathering or a grand celebration, we are committed to delivering
+            exceptional service tailored to your unique style and preferences. Our dedicated professionals work closely
+            with you to understand your needs, crafting every detail with creativity and precision.</p>
+          <p>At 7ojozat, we believe that every event tells a story, and we are here to help you tell yours
+            in the most beautiful way. Let us turn your dreams into reality and make your special day truly
+            extraordinary!</p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <!-- services section ends here  -->
+
+  <!-- booking section starts here  -->
+  <section class="booking-section py-5" id="booking">
+    <div class="container py-4">
+      <h2 class="title text-center">What are you trying to book?</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <label class="custom-icon-radio" for="weddingRadio">
+            <input type="radio" name="bookingType" value="wedding" id="weddingRadio" />
+            <span class="checked-content">
+              <img src="./images/wedding-couple.png" alt="wedding-couple">
+              <span class="input-text">
+                Wedding
+              </span>
+            </span>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label class="custom-icon-radio" for="jahaRadio">
+            <input type="radio" name="bookingType" value="jaha" id="jahaRadio" />
+            <span class="checked-content">
+              <img src="./images/ceremony.png" alt="ring-ceremony">
+              <span class="input-text">
+                Jaha
+              </span>
+            </span>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label class="custom-icon-radio" for="birthdayRadio">
+
+            <input type="radio" name="bookingType" value="birthday" id="birthdayRadio" />
+            <span class="checked-content">
+              <img src="./images/cake.png" alt="cake">
+              <span class="input-text">
+                Birthday
+              </span>
+            </span>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label class="custom-icon-radio" for="othersRadio">
+            <input type="radio" name="bookingType" value="other" id="othersRadio" />
+            <span class="checked-content">
+              <img src="./images/calendar.png" alt="calendar">
+              <span class="input-text">
+                Other
+              </span>
+            </span>
+          </label>
+        </div>
+        <div class="col-12 mt-5 text-center">
+          <button class="btn btn-primary px-5" onclick="saveAndNext()">
+            <span class="d-inline-block px-5">Next</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- booking section ends here  -->
+
+
+  <!-- services section starts here  -->
+  <section class="services-section bg-light py-5" id="services">
+    <div class="container">
+      <h2 class="text-center title">Our Services</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="service-box bg-white text-center p-4 shadow-lg">
+            <div class="img-box">
+              <img src="./images/birthday.svg" alt="">
+            </div>
+            <h4 class="text-dark mb-3">Birthday Celebration</h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, corrupti?</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box bg-white text-center p-4 shadow-lg">
+            <div class="img-box">
+              <img src="./images/engagment.svg" alt="engagment">
+            </div>
+            <h4 class="text-dark mb-3">Engagment Mangagment </h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, corrupti?</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box bg-white text-center p-4 shadow-lg">
+            <div class="img-box">
+              <img src="./images/wedding.svg" alt="wedding">
+            </div>
+            <h4 class="text-dark mb-3">Wedding Event </h4>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, corrupti?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- services section ends here  -->
+
+
+  <!-- clients testimonials section starts here  -->
+  <section class="clients-testimonials py-5" id="testimonials">
+    <div class="container">
+      <h2 class="text-center title">What Our Clients Say</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial text-center bg-light">
+            <div class="img">
+              <img src="./images/avatar.svg" alt="client-img">
+            </div>
+            <div class="testimonial-content">
+              <ul class="text-primary rating d-flex justify-content-center mb-4">
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+              </ul>
+              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptate delectus sunt,
+                aut tenetur
+                commodi consequuntur officiis aspernatur, odit reprehenderit nemo quas ipsam iure amet adipisci natus
+                pariatur eum. Libero!</p>
+              <h4 class="text-dark">Anwar</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial text-center bg-light">
+            <div class="img">
+              <img src="./images/avatar.svg" alt="client-img">
+            </div>
+            <div class="testimonial-content">
+              <ul class="text-primary rating d-flex justify-content-center mb-4">
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+              </ul>
+              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptate delectus sunt,
+                aut tenetur
+                commodi consequuntur officiis aspernatur, odit reprehenderit nemo quas ipsam iure amet adipisci natus
+                pariatur eum. Libero!</p>
+              <h4 class="text-dark">Anwar</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial text-center bg-light">
+            <div class="img">
+              <img src="./images/avatar.svg" alt="client-img">
+            </div>
+            <div class="testimonial-content">
+              <ul class="text-primary rating d-flex justify-content-center mb-4">
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+                <li class="px-1 h5 mb-0"><i class="fa-solid fa-star"></i></li>
+              </ul>
+              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptate delectus sunt,
+                aut tenetur
+                commodi consequuntur officiis aspernatur, odit reprehenderit nemo quas ipsam iure amet adipisci natus
+                pariatur eum. Libero!</p>
+              <h4 class="text-dark">Anwar</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- clients testimonials section ends here  -->
+
+
+
+  <!-- contact us section   -->
+  <section class="contact-us-section py-5" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-information mb-4">
+            <h3 class="title left mb-4">Contact Us</h3>
+            <div class="contact-box d-flex align-items-center">
+              <div class="icon phone-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="text-dark">Phone Us </h4>
+                <h5>8974454565</h5>
+              </div>
+            </div>
+            <div class="contact-box d-flex align-items-center">
+              <div class="icon mail-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-dark">Mail Us </h4>
+                <h5>test@test.com</h5>
+              </div>
+            </div>
+            <div class="contact-box d-flex align-items-center">
+              <div class="icon location-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-dark">Our Location </h4>
+                <h5>125, New Delhi, India</h5>
+              </div>
+            </div>
+          </div>
+          <div class="pt-3">
+            <h3 class="title left mb-4">Follow Us On</h3>
+            <ul class="d-flex align-items-center social-media-links">
+              <li><a href="#" target="_blank" title="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a></li>
+              <li><a href="#" target="_blank" title="Twitter X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a></li>
+              <li><a href="#" target="_blank" title="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="contact-form">
+            <form action="">
+              <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Enter Full Name">
+              </div>
+              <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Enter Contact Number">
+              </div>
+              <div class="mb-4">
+                <input type="text" class="form-control" placeholder="Enter Email Address">
+              </div>
+              <div class="mb-4">
+                <textarea name="#" id="" rows="10" class="form-control" placeholder="Enter Message"></textarea>
+              </div>
+              <button class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact us ends  section   -->
+
+  <!-- footer starts here  -->
+  <footer class="bg-light text-dark border-top py-3">
+    <div class="container text-center">
+      <p class="mb-0">© 2024 7ojozat. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <!-- footer starts ends here  -->
+
+</body>
+
+</html>
