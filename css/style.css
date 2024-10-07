@@ -2,10 +2,10 @@ header .main-menu li a {
   font-weight: 500;
   padding: 10px 15px;
   font-size: 16px;
-  color: #1F1E0B ;
+  color: #1F1E0B;
 }
 
-header .btn-book{
+header .btn-book {
   padding: 10px 15px;
   margin-left: 25px;
 }
@@ -124,10 +124,11 @@ header .btn-book{
   margin-left: 10px;
 }
 
-/* .clients-testimonials .testimonial
-
-.clients-testimonials .testimonial
-
-.clients-testimonials .testimonial
-
-.clients-testimonials .testimonial */
+#carouselBannerIndicators .carousel-indicators [data-bs-target] {
+  background: linear-gradient(180deg, #205aed 100%, #2764ff 0%);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border-top: 0;
+  border-bottom: 0;
+}

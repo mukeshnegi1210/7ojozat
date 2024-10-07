@@ -13,27 +13,7 @@
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
-  <script>
 
-    window.onload = function () {
-      const savedType = localStorage.getItem('bookingType');
-      if (savedType) {
-        document.querySelector(`input[name="bookingType"][value="${savedType}"]`).checked = true;
-      }
-    }
-
-    function saveAndNext() {
-      const bookingType = document.querySelector('input[name="bookingType"]:checked');
-
-      if (!bookingType) {
-        alert("Please select a booking type.");
-        return;
-      }
-
-      localStorage.setItem("bookingType", bookingType.value);
-      window.location.href = "step2.html#booking";
-    }
-  </script>
 </head>
 
 <body>
@@ -42,9 +22,9 @@
   <header>
     <div class="container">
       <div class="d-flex align-items-center">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <img src="./images/logo.png" alt="7ojozat">
-        </div>
+        </a>
         <ul class="d-flex ms-auto mb-0 main-menu">
           <li><a href="#">About Us</a></li>
           <li><a href="#services">Services</a></li>
@@ -89,15 +69,14 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="banner-content">
-                  <h1 class="text-primary mb-3">Make Every Birthday Unforgettable!</h1>
-                  <h4 class="font-weight-normal mb-4">Expert Planning, Unique Themes, and Memorable Experiences for All
-                    Ages.
-                  </h4>
+                  <h1 class="text-primary mb-3"> Turning Dreams into Reality</h1>
+                  <h4 class="font-weight-normal mb-4">Expertly crafted weddings, tailored to your vision. Let us create
+                    unforgettable moments on your special day.</h4>
                   <button class="btn btn-primary">Book Now</button>
                 </div>
               </div>
-              <div class="col-md-6">
-                <img src="./images/banner-img.svg" alt="banner-img">
+              <div class="col-md-6 text-end">
+                <img src="./images/banner-img-2.svg" alt="banner-img">
               </div>
             </div>
           </div>
@@ -190,9 +169,9 @@
           </label>
         </div>
         <div class="col-12 mt-5 text-center">
-          <button class="btn btn-primary px-5" onclick="saveAndNext()">
+          <a href="step2.html" class="btn btn-primary px-5" onclick="saveAndNext()">
             <span class="d-inline-block px-5">Next</span>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -397,7 +376,12 @@
     </div>
   </footer>
   <!-- footer starts ends here  -->
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

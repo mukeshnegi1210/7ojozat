@@ -13,38 +13,6 @@
   <link rel="stylesheet" href="./css/global.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
-  <script>
-    window.onload = function () {
-      const bookingType = localStorage.getItem('bookingType');
-      const date = localStorage.getItem('date');
-      const people = localStorage.getItem('people');
-      const timeOfDay = localStorage.getItem('timeOfDay');
-      const venue = localStorage.getItem('venue');
-
-      if (bookingType) document.getElementById('selectedType').innerText = bookingType;
-      if (date) document.getElementById('selectedDate').innerText = date;
-      if (people) document.getElementById('selectedPeople').innerText = people;
-      if (timeOfDay) document.getElementById('selectedTime').innerText = timeOfDay;
-      if (venue) document.getElementById('selectedVenue').innerText = venue;
-
-      const savedAttendees = localStorage.getItem('attendees');
-      if (savedAttendees) {
-        document.getElementById('attendees').value = savedAttendees;
-      }
-    }
-
-    function submitForm() {
-      const attendees = document.getElementById("attendees").value;
-
-      if (!attendees) {
-        alert("Please fill in the number of attendees.");
-        return;
-      }
-
-      localStorage.setItem("attendees", attendees);
-      alert("Form submitted successfully!");
-    }
-  </script>
 </head>
 
 <body>
@@ -52,9 +20,9 @@
   <header>
     <div class="container">
       <div class="d-flex align-items-center">
-        <div class="logo">
+        <a href="index.html" class="logo">
           <img src="./images/logo.png" alt="7ojozat">
-        </div>
+        </a>
         <ul class="d-flex ms-auto mb-0 main-menu">
           <li><a href="#">About Us</a></li>
           <li><a href="#services">Services</a></li>
@@ -74,70 +42,285 @@
   <!-- booking section starts here  -->
   <section class="booking-section py-5" id="booking">
     <div class="container py-4">
-      <h2 class="title text-center">Select Venue </h2>
-      <div class="row">
-        <div class="col-md-8">
+      <h2 class="title text-center">Details of the Place</h2>
+      <div class="row bg-light g-0">
+        <div class="col-md-7">
+          <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/wedding-venue-1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/wedding-venue-2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/wedding-venue-3.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4">
+            <div class="mb-3">
+              <h3 class="text-dark ">Toast Garden Lounge</h3>
+
+              <ul class="d-flex align-items-center mb-0">
+                <li class="text-primary"><i class="fa-solid fa-star"></i></li>
+                <li class="text-primary"><i class="fa-solid fa-star"></i></li>
+                <li class="text-primary"><i class="fa-solid fa-star"></i></li>
+                <li class="text-primary"><i class="fa-solid fa-star-half-stroke"></i></li>
+                <li class="text-primary"><i class="fa-regular fa-star"></i></li>
+              </ul>
+            </div>
+            <div class="mb-3">
+              <p class="font-weight-semi text-dark">Address</p>
+              <p>
+                <i class="fa-solid fa-location-dot text-primary"></i>
+                Janpath, Connaught Place (Cp), New Delhi.
+              </p>
+              <p><a href="">
+                  <i class="fa-solid fa-arrow-up-right-from-square text-primary"></i>
+                  Get Directions
+                </a></p>
+
+            </div>
+
+
+            <div class="mb-3">
+              <p class="font-weight-semi text-dark">Overview</p>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi natus eos qui fuga vero autem ullam
+                itaque
+                nemo eaque non? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit necessitatibus ea
+                voluptatem blanditiis voluptate amet in, voluptatibus itaque veritatis, nostrum illo. Amet officiis
+                ducimus numquam esse dolorem praesentium explicabo voluptates.</p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-md-3">
+          <div class="bg-light-blue p-4 rounded ">
+            <p class="d-flex justify-content-between text-dark">
+              <span class="me-2 ">Venue:</span>
+              <strong class="text-dark">$100</strong>
+            </p>
+            <p class="d-flex justify-content-between text-dark">
+              <span class="me-2 ">Food:</span><strong class="text-dark">$500</strong>
+
+            </p>
+            <p class="d-flex justify-content-between text-dark">
+              <span class="me-2 ">Gits:</span><strong class="text-dark">$500</strong>
+
+            </p>
+            <p class="d-flex justify-content-between text-dark">
+              <span class="me-2 ">Entertainment:</span><strong class="text-dark">$500</strong>
+
+            </p>
+            <button class="btn btn-primary w-100 mt-5">E7jez</button>
+          </div>
+
+        </div>
+        <div class="col-md-6">
           <div class="row">
-            <div class="col-md-6 mb-4">
+            <div class="col-md-12 mb-4">
               <p class="text-dark font-weight-semi mb-2">No of Attendees </p>
               <input type="text" id="attendees" placeholder="Enter No. of Attendees" class="form-control" />
             </div>
+            <div class="col-md-12 mb-4">
+              <p class="text-dark font-weight-semi mb-2">Food </p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="food1">
+                <label class="form-check-label" for="food1">
+                  Option One
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="food2">
+                <label class="form-check-label" for="food2">
+                  Option One
+                </label>
+              </div>
+            </div>
+            <div class="col-md-12 mb-4">
+              <p class="text-dark font-weight-semi mb-2">Cake (Select One) </p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Cakery</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake1">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake1">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Cake Shop</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake2">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake2">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
 
+                </div>
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Zalatimo</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake3">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="cake3">
+                    <label class="form-check-label" for="cake1">
+                      Option One
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 mb-4">
+              <p class="text-dark font-weight-semi mb-2">Gift (Select One) </p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Hamleys</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="gift1">
+                    <label class="form-check-label" for="gift1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="gift1">
+                    <label class="form-check-label" for="gift1">
+                      Option One
+                    </label>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Toys n Toys</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="toys1">
+                    <label class="form-check-label" for="toys1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="toys1">
+                    <label class="form-check-label" for="toys1">
+                      Option One
+                    </label>
+                  </div>
+
+                </div>
+                <div class="col-lg-4">
+                  <p class="text-dark font-weight-semi mb-2 small">Shalati</p>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="toys1">
+                    <label class="form-check-label" for="toys1">
+                      Option One
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="toys1">
+                    <label class="form-check-label" for="toys1">
+                      Option One
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 mb-4">
+              <p class="text-dark font-weight-semi mb-2">Food for parents </p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="foodParent1">
+                <label class="form-check-label" for="foodParent1">
+                  Option One
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="foodParent2">
+                <label class="form-check-label" for="foodParent2">
+                  Option One
+                </label>
+              </div>
+            </div>
           </div>
-
         </div>
-        <div class="col-md-4">
 
+        <div class="col-md-3">
           <div class="bg-light p-4 rounded">
-            <p class="d-flex justify-content-between text-dark">
-              <span class="me-2 ">Booking Type:</span>
-              <strong class="text-dark" id="selectedType"></strong> <!-- Shows booking type from step 1 -->
-            </p>
-            <p class="d-flex justify-content-between text-dark">
-              <span class="me-2 ">Date:</span><strong class="text-dark" id="selectedDate"></strong>
-              <!-- Shows date from step 2 -->
-            </p>
-            <p class="d-flex justify-content-between text-dark">
-              <span class="me-2 ">No of People:</span><strong class="text-dark" id="selectedPeople"></strong>
-              <!-- Shows number of people from step 2 -->
-            </p>
-            <p class="d-flex justify-content-between text-dark">
-              <span class="me-2 ">Time of Day:</span><strong class="text-dark" id="selectedTime"></strong>
-              <!-- Shows time of day from step 2 -->
-            </p>
-
-            <p class="d-flex justify-content-between text-dark">
-              <span class="me-2 ">Time of Day:</span><strong class="text-dark" id="selectedVenue"></strong>
-              <!-- Shows time of day from step 2 -->
-            </p>
-
+            <p class="text-dark font-weight-semi mb-3">What Venue Offers</p>
+            <ul>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Venue</li>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Food</li>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Entertainment</li>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Gifts</li>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Nannies</li>
+              <li class="d-flex align-items-start mb-2"><i
+                  class="fa-solid fa-star-of-life small me-2 mt-1 text-primary"></i>
+                Photographers</li>
+            </ul>
           </div>
-
         </div>
+
         <div class="col-12 mt-5 text-center">
-          <button class="btn btn-primary px-5" onclick="saveAndNext()">
+          <a href="step3.html" class="btn btn-secondary px-5 me-5">
+            <span class="d-inline-block px-4">Back</span>
+          </a>
+          <a href="step5.html" class="btn btn-primary px-5">
             <span class="d-inline-block px-4">Next</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
   <!-- booking section ends here  -->
-
-
-
-
-  <div class="container">
-    <h1>Step 4: Setup and Details</h1>
-    <p id="selectedType"></p> <!-- Shows booking type from step 1 -->
-    <p id="selectedDate"></p> <!-- Shows date from step 2 -->
-    <p id="selectedPeople"></p> <!-- Shows number of people from step 2 -->
-    <p id="selectedTime"></p> <!-- Shows time of day from step 2 -->
-    <p id="selectedVenue"></p> <!-- Shows venue from step 3 -->
-
-    <label>Number of Attendees: <input type="number" id="attendees" /></label><br />
-    <button onclick="submitForm()">Submit</button>
-  </div>
 
 
   <!-- footer starts here  -->
@@ -147,6 +330,13 @@
     </div>
   </footer>
   <!-- footer starts ends here  -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
