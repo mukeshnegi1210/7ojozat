@@ -19,20 +19,36 @@
 <body>
   <!-- header section starts here  -->
   <header>
-    <div class="container">
-      <div class="d-flex align-items-center">
-        <a href="index.html" class="logo">
-          <img src="./images/logo.png" alt="7ojozat">
+    <nav class="navbar navbar-expand-md navbar-light bg-white">
+      <div class="container-fluid">
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <a class="navbar-brand" href="index.html">
+          <img src=" ./images/logo.png" alt="7ojozat">
         </a>
-        <ul class="d-flex ms-auto mb-0 main-menu">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact Us </a></li>
-        </ul>
-        <a href="#booking" class="btn btn-primary btn-book">Book Now</a>
+       
+        <div class="collapse navbar-collapse ms-auto" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact Us</a>
+            </li>
+            
+          </ul>
+        </div>
+        <a  href="#booking" class="btn btn-primary btn-book ms-auto">Book Now</a>
       </div>
-    </div>
+    </nav>
   </header>
   <!-- header section ends here  -->
 
