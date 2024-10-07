@@ -21,15 +21,43 @@
   <header>
     <div class="container">
       <div class="d-flex align-items-center">
-        <a href="index.html" class="logo">
-          <img src="./images/logo.png" alt="7ojozat">
-        </a>
+
         <ul class="d-flex ms-auto mb-0 main-menu">
           <li><a href="#">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact Us </a></li>
         </ul>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src=" ./images/logo.png" alt="7ojozat">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <a href="#booking" class="btn btn-primary btn-book">Book Now</a>
       </div>
     </div>
@@ -123,9 +151,14 @@
           </div>
 
         </div>
+
+
         <div class="col-12 mt-5 text-center">
-          <button class="btn btn-primary px-5">
-            <span class="d-inline-block px-4" onclick=bookingAlert()>Checkout</span>
+          <a href="step4.html" class="btn btn-secondary px-md-5 me-3 me-md-5">
+            <span class="d-inline-block px-2 px-md-4">Back</span>
+          </a>
+          <button class="btn btn-primary px-5" onclick=bookingAlert()>
+            <span class="d-inline-block px-4">Checkout</span>
           </button>
         </div>
       </div>

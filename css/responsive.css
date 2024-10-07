@@ -1,3 +1,17 @@
-@media (max-width: 991px) {}
+@media (max-width: 991px) {
+
+    header .navbar-brand {
+        max-width: 180px;
+    }
+
+    header .btn-book {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+    header .navbar > .container-fluid{
+        flex-wrap: nowrap;
+    }
+    
+}
 
 @media (max-width: 767px) {}

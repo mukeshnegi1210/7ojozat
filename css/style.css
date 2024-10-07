@@ -1,8 +1,23 @@
-header .main-menu li a {
+header .navbar-nav {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+header .navbar-nav .nav-item a {
   font-weight: 500;
   padding: 10px 15px;
   font-size: 16px;
   color: #1F1E0B;
+}
+
+.navbar-light .navbar-toggler {
+  border: 0;
+  padding: 0;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(17,75,220,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
 }
 
 header .btn-book {
@@ -12,6 +27,10 @@ header .btn-book {
 
 .services-section .service-box {
   border-radius: 15px;
+}
+
+.services-section .service-box:hover {
+  transform: scale(1.05);
 }
 
 .services-section .service-box .img-box {
